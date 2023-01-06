@@ -16,7 +16,7 @@ const patrimonySchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     require: [true],
-  }
+  },
 });
 
 module.exports = mongoose.model('Patrimony', patrimonySchema);
