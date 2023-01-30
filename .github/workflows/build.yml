@@ -14,7 +14,9 @@ jobs:
         MONGO_INITDB_DATABASE: root-db
 
     - name: Tests check
-      run: docker network create siged_backend && docker-compose run api_patrimony bash -c  "yarn && yarn jest --coverage --forceExit"
+      run: |
+        docker-compose up --build 
+        docker-compose run api_patrimony bash -c  "yarn && yarn jest --coverage --forceExit"
 
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
