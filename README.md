@@ -85,3 +85,11 @@ Para criar um novo item, envie os dados nesse formato:
 }
 ```
 
+**PUT: `/patrimony/:id`**
+
+Para atualizar um item.
+
+
+**DELETE: `/patrimony/:id`**
+
+Para deletar um item.
