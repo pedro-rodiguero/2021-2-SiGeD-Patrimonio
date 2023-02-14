@@ -64,6 +64,20 @@ describe('Sample Test', () => {
     done();
   });
 
+  it('Update patrimony with id', async (done) => {
+    const res = await request(app).put(`/patrimony/${id}`);
+    expect(res.statusCode).toBe(200);
+    expect(res.body.name).toBe(patrimony.name);
+    expect(res.body.description).toBe(patrimony.description);
+    done();
+  });
+
+  it('Delete patrimony with id', async (done) => {
+    const res = await request(app).delete(`/patrimony/${id}`);
+    expect(res.statusCode).toBe(200);
+    done();
+  });
+
 
 });
 

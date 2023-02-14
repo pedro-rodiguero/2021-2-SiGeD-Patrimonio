@@ -43,8 +43,32 @@ const createPatrimony = async (req, res) => {
   }
 };
 
+const updatePatrimony = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const patrimony = await Patrimony.findByIdAndUpdate(id, req.body, { new: true });
+    return res.json(patrimony);
+  } catch {
+    return res.status(400).json({ error: 'Invalid id' });
+  }
+}
+
+const deletePatrimony = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const patrimony = await Patrimony.findByIdAndDelete(id);
+    return res.json(patrimony);
+  } catch {
+    return res.status(400).json({ error: 'Invalid id' });
+  }
+}
+
 module.exports = {
   getAll,
   getOne,
   createPatrimony,
+  updatePatrimony,
+  deletePatrimony
 };
