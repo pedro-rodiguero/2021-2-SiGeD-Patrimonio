@@ -14,7 +14,6 @@ services:
       - node_modules:/code/node_modules
     networks: 
       - backend_patrimony
-      - siged_backend
     depends_on:
       - db_patrimony
 
@@ -40,5 +39,3 @@ volumes:
 
 networks: 
   backend_patrimony:
-  siged_backend:
-    external: true
